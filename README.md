@@ -1,4 +1,4 @@
-![alt tag](https://raw.githubusercontent.com/shinexavier/BombaJS/master/BombaJSLogo.png)
+![alt tag](https://raw.githubusercontent.com/shinexavier/BombaJS/master/BombaJSLogo.png "Bomba.JS")
 
 An Automatic JS-Based State Computing Workflow Engine.
 

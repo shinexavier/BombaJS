@@ -1,0 +1,41 @@
+{
+    "Bomba": {
+        "States": {
+            "WaitForRegistration": {
+                "predicates": {
+                    "isInputValid": "validateInputs",
+                    "isServerReady": "checkServerConfig"
+                },
+                "extEvents": {
+                    "cmdREGISTER": "handlerRegister",
+                    "cmdSUBMITSMS": "handlerSubmitSMS"
+                },
+                "intEvents": {
+                    "sendOK": "sendOK",
+                    "sendSENDSMS": "sendSENDSMS",
+                    "sendINCORRECTMETHOD": "sendINCORRECTMETHOD",
+                    "sendINVALIDREQUEST": "sendINVALIDREQUEST"
+                }
+            }
+        },
+        "db": {
+            "sessions": {
+                "1": {
+                    "state": "WaitForRegistration"
+                },
+                "2": {
+                    "state": "WaitForRegistration"
+                },
+                "3": {
+                    "state": "WaitForHello"
+                },
+                "4": {
+                    "state": "WaitForRegistration"
+                },
+                "5": {
+                    "state": "WaitForHello"
+                }
+            }
+        }
+    }
+}

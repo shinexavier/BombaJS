@@ -1,0 +1,32 @@
+{
+  "name": "Bombe",
+  "version": "0.0.1",
+  "description": "An Automatic JS-Based State Computing Framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shinexavier/Bombe.git"
+  },
+  "keywords": [
+    "bombe",
+    "statemachine"
+  ],
+  "author": "Shine Xavier <shine.xavier@gmail.com> (http://stoi.wordpress.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shinexavier/Bombe/issues"
+  },
+  "homepage": "https://github.com/shinexavier/Bombe",
+  "dependencies": {
+    "async": "^1.4.2",
+    "colour": "^0.7.1",
+    "config": "^1.15.0",
+    "debug": "^2.2.0",
+    "express": "^4.13.3",
+    "nodemon": "^1.4.1"
+  },
+  "readme": "Bombe: An Automatic JS-Based State Computing Framework"
+}

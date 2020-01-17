@@ -1,14 +1,13 @@
 var util = require('util'),
     events = require('events'),
     config = require('config'),
-    that = null;
+    cmdController = null;
 
 function CommandController() {
     "use strict";
     this.router = initializeRouter();
     this.log = log;
     events.EventEmitter.call(this);
-    that = this;
 }
 
 util.inherits(CommandController, events.EventEmitter);
@@ -49,12 +48,12 @@ function initializeRouter() {
             var reqEvent = req.query.reqEvent,
                 stateEvents = config.get('Bomba.States')[currentState]['extEvents'],
                 State = require('.././states/' + currentState),
-                stateInstance = new State(that),
-                eventSync = stateEvents[reqEvent],
-                eventHandler = stateInstance[eventSync];
-            console.log('Event Sync:', eventSync);
+                stateInstance = new State(cmdController),
+                eventSink = stateEvents[reqEvent],
+                eventHandler = stateInstance[eventSink];
+            console.log('Event Sink:', eventSink);
             if (typeof eventHandler === "function") {
-                eventHandler.apply(that);
+                eventHandler.apply(stateInstance);
             }
             next();
         };
@@ -66,7 +65,7 @@ function initializeRouter() {
     return router;
 }
 
-var cmdController = new CommandController();
+cmdController = new CommandController();
 
 cmdController.on('log', function (message) {
     "use strict";

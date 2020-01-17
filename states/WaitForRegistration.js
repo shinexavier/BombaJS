@@ -1,22 +1,22 @@
-function WaitForRegistration(smContext) {
+function WaitForRegistration(cmdController) {
     "use strict";
     var handlerRegister = function () {
-            this.log('handlerRegister invoked...');
+            cmdController.log('handlerRegister invoked...');
         },
         handlerSubmitSMS = function () {
-            smContext.log('handlerSubmitSMS invoked...');
+            cmdController.log('handlerSubmitSMS invoked...');
         },
         validateInputs = function () {
-            smContext.log('validateInputs invoked...');
+            cmdController.log('validateInputs invoked...');
         },
         checkServerConfig = function () {
-            smContext.log('checkServerConfig invoked...');
+            cmdController.log('checkServerConfig invoked...');
         },
         sendOK = function () {
-            smContext.log('sendOK invoked...');
+            cmdController.log('sendOK invoked...');
         },
         sendSENDSMS = function () {
-            smContext.log('sendSENDSMS invoked...');
+            cmdController.log('sendSENDSMS invoked...');
         };
     this.handlerRegister = handlerRegister;
     this.handlerSubmitSMS = handlerSubmitSMS;

@@ -1,17 +1,17 @@
 //External Modules
 var express = require('express'),
-    app = express(),
-    colour = require('colour');
+    expressApp = express(),
+    consoleColour = require('colour');
 
 //Internal Modules (Core)
-var cmdController = require('./routers/externalEvents');
+var extEventRouter = require('./routers/externalEvents');
 
 //Internal Modules (Others)
 
-// External Event Handlers Initialization
-cmdController.initialize(app);
+// External Event Router & Handlers Initialization
+extEventRouter.initialize(expressApp);
 
 if (!module.parent) {
-    app.listen(8166);
+    expressApp.listen(8166);
     console.log('Bomba started on port 8166...'.rainbow);
 }
